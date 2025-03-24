@@ -1,37 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@mantine/core';
 import { IconAt } from '@tabler/icons-react';
-
-interface InputProps {
-
-  label: string;
-  placeholder: string;
-  inputType?: string;
-  value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  type?: string;
-  icon?: React.ReactNode;
-  description: string;
-}
-
-const Input = ({ label, inputType = 'text', placeholder, description, value, onChange, icon }: InputProps) => {
-  return (
-    <> 
-    <p>{label}</p>
-    <p>{description}</p>
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      {icon && <span>{icon}</span>}
-    <input
-      title='Full name'
-      type={inputType}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      />
-      </div>
-    </>
-  );
-};
+import { Input } from '../src/components/input';
 
 interface SignupProps {
   onSubmit: (data: SignupFormData) => void;
@@ -93,7 +63,8 @@ export function Signup({ onSubmit }: SignupProps) {
       <Input
         type="email"
         label="Email"
-        placeholder="Введите адрес электронной почты"
+        description="Введите адрес электронной почты"
+        placeholder="exampe@gmail.com"
         value={email}
         onChange={(e) => setEmail(e.currentTarget.value)}
       />

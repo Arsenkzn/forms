@@ -1,41 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@mantine/core';
-
-interface InputProps {
-  label: string;
-  placeholder: string;
-  inputType?: string;
-  value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  icon?: React.ReactNode;
-  description: string;
-  name: string;
-}
-
-const Input = ({
-  label,
-  inputType = 'text',
-  placeholder,
-  description,
-  value,
-  onChange,
-  name,
-}: InputProps) => {
-  return (
-    <>
-      <p>{label}</p>
-      <p>{description}</p>
-      <input
-        title="Полное имя"
-        type={inputType} 
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        name={name}
-      />
-    </>
-  );
-};
+import { Input } from '../src/components/input';
 
 interface SigninProps {
   onSubmit: (data: SigninFormData) => void;
